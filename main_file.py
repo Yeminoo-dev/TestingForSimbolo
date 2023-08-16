@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-path = 'ViT_cifar10.h5'
+path = r'ViT_cifar10.h5'
 
 st.set_page_config(page_title = 'Project', layout = 'wide')
 
@@ -31,7 +31,6 @@ image_size = 72
 num_patches = (conv_output // patch_size) ** 2
 num_class = 10
 projection_dim = 128
-x = tf.zeros([1, 32, 32, 3])
 
 if file is not None:
     image = Image.open(file)
@@ -50,7 +49,6 @@ if file is not None:
                  epsilon = 0.001, 
                  dropout = 0.2)
     
-    model(x)
     model.load_weights(path)
     result = model(image)
     values, indices = tf.math.top_k(result, k = options)
