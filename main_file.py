@@ -31,6 +31,7 @@ image_size = 72
 num_patches = (conv_output // patch_size) ** 2
 num_class = 10
 projection_dim = 128
+x = tf.random.uniform((1, 32, 32, 3))
 
 if file is not None:
     image = Image.open(file)
@@ -48,7 +49,8 @@ if file is not None:
                  projection_dim, 
                  epsilon = 0.001, 
                  dropout = 0.2)
-    
+
+    model(x)
     model.load_weights(path)
     result = model(image)
     values, indices = tf.math.top_k(result, k = options)
