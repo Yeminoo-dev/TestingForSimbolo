@@ -4,8 +4,10 @@ import ViT
 import numpy as np
 import pandas as pd
 from PIL import Image
+import h5py
 
-path = r'/ViT_cifar10.h5'
+path = '/ViT_cifar10.h5'
+file = h5py.File(path, 'r')
 
 st.set_page_config(page_title = 'Project', layout = 'wide')
 
@@ -51,7 +53,7 @@ if file is not None:
                  dropout = 0.2)
 
     model(x)
-    model.load_weights(path)
+    model.load_weights(file)
     result = model(image)
     values, indices = tf.math.top_k(result, k = options)
     idx, prob = indices[0].numpy(), values[0].numpy()
