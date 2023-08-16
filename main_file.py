@@ -3,7 +3,7 @@ import tensorflow as tf
 import ViT
 import numpy as np
 import pandas as pd
-
+from PIL import Image
 
 path = r'C:\Users\LENOVO\Desktop\vscode folders\simbolo\ViT_cifar10.h5'
 
