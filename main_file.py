@@ -1,6 +1,6 @@
 import streamlit as st
 import tensorflow as tf
-import ViT_cifar10 as ViT
+import ViT
 import numpy as np
 import pandas as pd
 
