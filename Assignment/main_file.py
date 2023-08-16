@@ -6,7 +6,7 @@ import pandas as pd
 from PIL import Image
 import urllib
 
-path = 'Sample-Project/blob/main/ViT_cifar10.h5'
+path = 'Assignment/ViT_cifar10.h5'
 
 st.set_page_config(page_title = 'Project', layout = 'wide')
 
