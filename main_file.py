@@ -7,7 +7,7 @@ from PIL import Image
 import urllib
 
 path = 'https://github.com/Yeminoo-dev/Sample-Project/blob/main/ViT_cifar10.h5'
-file = urllib.request.urlretrieve(path, 'model.h5')
+file = urllib.request.urlretrieve(path)
 
 st.set_page_config(page_title = 'Project', layout = 'wide')
 
