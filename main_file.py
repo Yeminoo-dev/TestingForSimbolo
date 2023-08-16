@@ -4,10 +4,10 @@ import ViT
 import numpy as np
 import pandas as pd
 from PIL import Image
-import h5py
+import urllib
 
-path = 'ViT_cifar10.h5'
-file = h5py.File(path, 'r')
+path = 'https://github.com/Yeminoo-dev/Sample-Project/blob/main/ViT_cifar10.h5'
+urllib.request.urlretrieve(path, 'model.h5')
 
 st.set_page_config(page_title = 'Project', layout = 'wide')
 
@@ -53,7 +53,7 @@ if file is not None:
                  dropout = 0.2)
 
     model(x)
-    model.load_weights(file)
+    model.load_weights('model.h5')
     result = model(image)
     values, indices = tf.math.top_k(result, k = options)
     idx, prob = indices[0].numpy(), values[0].numpy()
