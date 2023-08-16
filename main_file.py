@@ -6,8 +6,7 @@ import pandas as pd
 from PIL import Image
 import urllib
 
-path = 'https://github.com/Yeminoo-dev/Sample-Project/blob/main/ViT_cifar10.h5'
-file = urllib.request.urlretrieve(path)
+path = 'Sample-Project/blob/main/ViT_cifar10.h5'
 
 st.set_page_config(page_title = 'Project', layout = 'wide')
 
@@ -53,7 +52,7 @@ if file is not None:
                  dropout = 0.2)
 
     model(x)
-    model.load_weights(file)
+    model.load_weights(path)
     result = model(image)
     values, indices = tf.math.top_k(result, k = options)
     idx, prob = indices[0].numpy(), values[0].numpy()
