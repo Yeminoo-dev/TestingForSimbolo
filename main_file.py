@@ -6,7 +6,7 @@ import pandas as pd
 from PIL import Image
 import h5py
 
-path = '/ViT_cifar10.h5'
+path = 'ViT_cifar10.h5'
 file = h5py.File(path, 'r')
 
 st.set_page_config(page_title = 'Project', layout = 'wide')
